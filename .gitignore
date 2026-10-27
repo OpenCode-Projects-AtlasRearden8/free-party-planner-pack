@@ -1,0 +1,12 @@
+*.pyc
+*.swp
+.DS_Store
+.env
+.env.*
+.pytest_cache/
+.venv/
+__pycache__/
+build-tmp/
+dist/*.tmp
+node_modules/
+venv/

@@ -1,0 +1,4 @@
+# Build + test dependencies (all local, nothing fetched at print time).
+weasyprint>=61
+pypdf>=4.0
+pytest>=8.0

@@ -1,0 +1,263 @@
+/* base.css — shared styles for the Free Party Planner Pack.
+   Warm, calm, ink-friendly: every sheet prints well in black & white.
+   No web fonts, no images, no external requests: everything is local. */
+
+@page {
+  size: Letter;
+  margin: 0.75in 0.7in 0.85in;
+
+  @bottom-center {
+    content: "Page " counter(page) " of " counter(pages);
+    font-family: "Liberation Sans", "DejaVu Sans", sans-serif;
+    font-size: 8pt;
+    color: #c1a2ac;
+  }
+}
+
+body {
+  font-family: "Liberation Sans", "DejaVu Sans", sans-serif;
+  font-size: 10pt;
+  line-height: 1.5;
+  color: #4d3842;
+}
+
+h1, h2, h3 {
+  font-family: "Liberation Serif", "DejaVu Serif", serif;
+  color: #8a4b5c;
+  margin: 0;
+}
+
+p { margin: 0 0 6pt; }
+
+/* ---------- warm usage page (first page of every PDF) ---------- */
+
+.usage {
+  page-break-after: always;
+  break-after: page;
+}
+
+.kicker {
+  font-size: 8.5pt;
+  letter-spacing: 1.6pt;
+  text-transform: uppercase;
+  color: #ab8494;
+  margin: 0 0 8pt;
+}
+
+.usage h1 {
+  font-size: 23pt;
+  line-height: 1.2;
+  margin: 0 0 4pt;
+}
+
+.lead {
+  font-size: 11.5pt;
+  line-height: 1.55;
+  color: #6e5260;
+  margin: 10pt 0 4pt;
+}
+
+.usage .rule {
+  border: 0;
+  border-top: 1.5pt solid #e3ccd3;
+  margin: 12pt 0 4pt;
+}
+
+.usage h2 {
+  font-size: 12pt;
+  margin: 14pt 0 5pt;
+}
+
+.usage ol, .usage ul {
+  margin: 0 0 6pt;
+  padding-left: 16pt;
+}
+
+.usage li { margin-bottom: 5pt; }
+.usage ul.inside li { margin-bottom: 2pt; }
+
+.kindnote {
+  background: #fbf1ee;
+  border: 1pt solid #e7cfca;
+  border-left: 3pt solid #c26e87;
+  border-radius: 4pt;
+  padding: 9pt 11pt;
+  margin: 13pt 0 4pt;
+}
+
+.kindnote p { margin: 0; }
+
+.printtip {
+  color: #927f89;
+  font-size: 9pt;
+  margin-top: 12pt;
+}
+
+/* ---------- sheet pages (the part you fill in) ---------- */
+
+.sheet header { margin-bottom: 8pt; }
+
+.sheet h2 { font-size: 17pt; }
+
+.sheet .sub {
+  color: #927f89;
+  font-size: 9.5pt;
+  margin-top: 2pt;
+}
+
+.pagebreak {
+  page-break-before: always;
+  break-before: page;
+}
+
+/* ruled tables for writing in */
+
+table.grid {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 4pt;
+}
+
+table.grid th {
+  font-family: "Liberation Serif", "DejaVu Serif", serif;
+  font-size: 9.5pt;
+  font-weight: bold;
+  text-align: left;
+  color: #7c4252;
+  background: #f7e9e5;
+  border-bottom: 1.25pt solid #b97a8b;
+  padding: 5pt 6pt;
+}
+
+table.grid td {
+  border-bottom: 0.75pt solid #e0c9cf;
+  padding: 5pt 6pt;
+  height: 22pt;
+  vertical-align: middle;
+  font-size: 9pt;
+}
+
+table.grid td.num { text-align: right; }
+
+table.grid.compact td {
+  height: 15pt;
+  padding: 3pt 6pt;
+}
+
+table.grid tr.isle td {
+  background: #f7e9e5;
+  border-bottom: 1.25pt solid #b97a8b;
+  color: #7c4252;
+  font-weight: bold;
+  font-size: 9.5pt;
+  padding: 4pt 6pt;
+}
+
+.hint {
+  color: #b79aa4;
+  font-size: 8pt;
+  font-style: italic;
+}
+
+/* checkboxes drawn in CSS — nothing to buy, nothing to plug in */
+
+.cb {
+  display: inline-block;
+  width: 11pt;
+  height: 11pt;
+  border: 1.2pt solid #9b707f;
+  border-radius: 2pt;
+  vertical-align: -1.5pt;
+}
+
+/* labeled write-in lines */
+
+.line {
+  display: inline-block;
+  border-bottom: 1pt solid #bd9ea7;
+  height: 13pt;
+  vertical-align: bottom;
+}
+
+.line.short { width: 90pt; }
+.line.med   { width: 150pt; }
+.line.long  { width: 240pt; }
+.line.full  { width: 100%; }
+
+/* soft boxes and checklist sections */
+
+.box {
+  border: 1pt solid #e6d0d5;
+  border-radius: 5pt;
+  background: #fffdf9;
+  padding: 9pt 11pt;
+  margin-bottom: 10pt;
+}
+
+.box h3 { font-size: 11.5pt; margin-bottom: 4pt; }
+.box p { margin: 0 0 4pt; }
+.box ul { margin: 0; padding-left: 14pt; }
+.box li { margin-bottom: 3pt; }
+
+.day {
+  border: 1pt solid #e6d0d5;
+  border-radius: 5pt;
+  background: #fffdf9;
+  padding: 8pt 11pt 5pt;
+  margin-bottom: 9pt;
+}
+
+.day h3 {
+  font-size: 12pt;
+  margin-bottom: 4pt;
+  border-bottom: 0.75pt solid #ead2d8;
+  padding-bottom: 2pt;
+}
+
+.day ul { list-style: none; margin: 0; padding: 0; }
+.day li { margin: 0 0 6pt; }
+
+/* top strip on the pass-around potluck card */
+
+.strip {
+  border: 1.25pt solid #c99aa7;
+  border-radius: 6pt;
+  background: #fdf6f3;
+  padding: 9pt 12pt;
+  margin: 4pt 0 10pt;
+}
+
+.strip p { margin: 0 0 5pt; }
+.strip p:last-child { margin: 0; }
+
+/* big gentle statements, for the permission card */
+
+.bigsay {
+  font-family: "Liberation Serif", "DejaVu Serif", serif;
+  font-size: 14pt;
+  line-height: 1.45;
+  color: #7c4252;
+  margin: 0 0 11pt;
+}
+
+.choice {
+  border: 1pt solid #e6d0d5;
+  border-left: 3pt solid #c26e87;
+  border-radius: 5pt;
+  background: #fffdf9;
+  padding: 9pt 12pt 6pt;
+  margin-bottom: 10pt;
+}
+
+.choice h3 { font-size: 12pt; margin-bottom: 4pt; }
+.choice ul { list-style: none; margin: 0; padding: 0; }
+.choice li { margin: 0 0 7pt; }
+
+/* short opener lines, for the thank-you tracker */
+
+.opener {
+  font-size: 9.5pt;
+  line-height: 1.65;
+  color: #6e5260;
+  margin: 0 0 5pt;
+}
